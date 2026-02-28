@@ -23,7 +23,7 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
     <nav class="bg-brand-light shadow-md fixed w-full z-10 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-16 bg-white flex-grow">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-brand-light rounded-2xl p-8 shadow-inner flex flex-col md:flex-row items-center justify-between">
                 <div class="mb-8 md:mb-0 md:w-1/2">
@@ -99,6 +99,10 @@
                             <i class="fa-solid fa-envelope text-brand-accent w-6"></i>
                             <a href="mailto:deepakkumar964379@gmail.com" class="hover:text-brand-accent transition">deepakkumar964379@gmail.com</a>
                         </div>
+                        <div class="flex items-center text-gray-800">
+                            <i class="fa-solid fa-location-dot text-brand-accent w-6"></i>
+                            <span>Sector-62, Noida</span>
+                        </div>
                     </div>
                 </div>
                 <div class="md:w-1/3 flex justify-center">
@@ -110,21 +114,33 @@
         </div>
     </section>
 
-    <footer class="bg-brand-dark text-white py-8 text-center">
+    <div class="bg-blue-900 text-white py-4 px-4 text-center text-sm font-medium w-full">
+        This business received capacity-building consulting from <a href="https://www.makex.in" target="_blank" class="text-brand-light hover:text-white underline transition">www.makex.in</a>. Contact them to enable your organization.
+    </div>
+
+    <footer class="bg-brand-dark text-white py-6 text-center w-full">
         <p>&copy; 2026 Accent On Health Food Catering Service. All rights reserved.</p>
     </footer>
 
     <div id="interactive-order-modal" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 hidden flex-col justify-end sm:justify-center items-center sm:p-4 transition-opacity">
         <div class="bg-gray-50 w-full sm:max-w-2xl sm:rounded-2xl shadow-2xl flex flex-col h-[90vh] sm:h-[85vh] animate-slide-up sm:animate-none">
             
-            <div class="bg-brand-dark text-white px-6 py-4 flex justify-between items-center sm:rounded-t-2xl shrink-0">
-                <div>
-                    <h2 class="text-2xl font-bold">Build Your Order</h2>
-                    <p class="text-brand-light text-sm">Add items to your cart</p>
+            <div class="bg-brand-dark text-white px-6 py-4 flex flex-col sm:rounded-t-2xl shrink-0">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold">Build Your Order</h2>
+                        <p class="text-brand-light text-sm">Add items to your cart</p>
+                    </div>
+                    <button onclick="window.closeOrderModal()" class="text-gray-300 hover:text-white transition bg-brand-dark/50 p-2 rounded-full w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
                 </div>
-                <button onclick="window.closeOrderModal()" class="text-gray-300 hover:text-white transition bg-brand-dark/50 p-2 rounded-full w-10 h-10 flex items-center justify-center">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
+                <div class="relative w-full mt-4">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa-solid fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" id="menu-search-input" onkeyup="window.filterMenu()" placeholder="Search items (e.g., Maggi, Shake)..." class="bg-white border border-transparent text-gray-900 text-sm rounded-xl focus:ring-brand-light focus:border-brand-light block w-full pl-10 p-3 shadow-inner">
+                </div>
             </div>
             
             <div class="p-4 sm:p-6 overflow-y-auto flex-grow" id="interactive-menu-container">
@@ -149,188 +165,65 @@
     </div>
 
     <script>
-        const menuData = [
-            {
-                category: "Salad", colorClass: "bg-green-600",
-                items: [
-                    { id: "sal1", name: "Fruit yogurt", price: 70 }, { id: "sal2", name: "Creamy salad", price: 70 },
-                    { id: "sal3", name: "Green salad", price: 70 }, { id: "sal4", name: "Cucumber salad", price: 80 },
-                    { id: "sal5", name: "Tomato salad", price: 70 }, { id: "sal6", name: "Veg salad", price: 80 },
-                    { id: "sal7", name: "Asian salad", price: 90 }, { id: "sal8", name: "Broccoli salad", price: 110 },
-                    { id: "sal9", name: "Chickpea salad", price: 90 }, { id: "sal10", name: "Grilled veg salad", price: 110 },
-                    { id: "sal11", name: "Lettuce salad", price: 110 }, { id: "sal12", name: "Corn salad", price: 60 },
-                    { id: "sal13", name: "Sprouts salad", price: 60 }
-                ]
-            },
-            {
-                category: "Sandwich", colorClass: "bg-brand-dark",
-                items: [
-                    { id: "san1", name: "Coleslaw Sandwich", price: 70 }, { id: "san2", name: "Veg Cheese Sandwich", price: 75 },
-                    { id: "san3", name: "Veg Aloo Patty Sandwich", price: 70 }, { id: "san4", name: "Veg Club Sandwich", price: 70 },
-                    { id: "san5", name: "Paneer Sandwich", price: 80 }, { id: "san6", name: "Veg Aloo Patty Cheese Sandwich", price: 80 },
-                    { id: "san7", name: "Cheese Corn Sandwich", price: 80 }, { id: "san8", name: "Tandoori Paneer Sandwich", price: 80 },
-                    { id: "san9", name: "Hunk Cut Sandwich", price: 110 }, { id: "san10", name: "Avocado sandwich", price: 160 },
-                    { id: "san11", name: "Goakado Sandwich", price: 110 }
-                ]
-            },
-            {
-                category: "Roll", colorClass: "bg-red-600",
-                items: [
-                    { id: "r1", name: "Aloo Tikki Roll", price: 65 }, { id: "r2", name: "Aloo Tikki Cheese Roll", price: 75 },
-                    { id: "r3", name: "Egg Roll", price: 65 }, { id: "r4", name: "Paneer Roll", price: 80 },
-                    { id: "r5", name: "Egg Paneer Roll", price: 90 }
-                ]
-            },
-            {
-                category: "Chinese", colorClass: "bg-red-700",
-                items: [
-                    { id: "chi1", name: "Vegetable Chowmein", price: 60 }, { id: "chi2", name: "Egg Chowmein", price: 80 },
-                    { id: "chi3", name: "Paneer Chowmein", price: 80 }, { id: "chi4", name: "Veg Fried Rice", price: 60 },
-                    { id: "chi5", name: "Paneer Fried Rice", price: 85 }, { id: "chi6", name: "Egg Fried Rice", price: 85 },
-                    { id: "chi7", name: "Chilli Potato", price: 90 }, { id: "chi8", name: "Honey Chilli Potato", price: 99 }
-                ]
-            },
-            {
-                category: "Maggi", colorClass: "bg-yellow-500",
-                items: [
-                    { id: "m1", name: "Plane Maggi", price: 40 }, { id: "m2", name: "Vegetable Maggi", price: 45 },
-                    { id: "m3", name: "Atta Maggi", price: 60 }, { id: "m4", name: "Cheese Maggi", price: 60 },
-                    { id: "m5", name: "Fried Maggi", price: 70 }, { id: "m6", name: "Paneer Maggi", price: 80 },
-                    { id: "m7", name: "Egg Maggi", price: 70 }
-                ]
-            },
-            {
-                category: "Tasty Crispy", colorClass: "bg-orange-500",
-                items: [
-                    { id: "c1", name: "Crispy French Fries", price: 70 }, { id: "c2", name: "Peri Peri French Fries", price: 90 },
-                    { id: "c3", name: "Crispy Corn", price: 90 }, { id: "c4", name: "Cheese Nachos", price: 90 }
-                ]
-            },
-            {
-                category: "Burger", colorClass: "bg-amber-600",
-                items: [
-                    { id: "bg1", name: "Veg Aloo Patty Burger", price: 50 }, { id: "bg2", name: "Egg Burger", price: 55 },
-                    { id: "bg3", name: "Veg Aloo Patty Cheese Burger", price: 65 }, { id: "bg4", name: "Paneer Burger", price: 75 }
-                ]
-            },
-            {
-                category: "Multigrain Sub", colorClass: "bg-green-700",
-                items: [
-                    { id: "sub1", name: "Veg Aloo Patty Sub", price: 75 }, { id: "sub2", name: "Veg Aloo Patty Cheese Sub", price: 85 },
-                    { id: "sub3", name: "Paneer Sub", price: 85 }, { id: "sub4", name: "Cheese Paneer Sub", price: 95 }
-                ]
-            },
-            {
-                category: "Momos", colorClass: "bg-red-500",
-                items: [
-                    { id: "mo1", name: "Veg momos steam", price: 80 }, { id: "mo2", name: "Veg momos fry", price: 90 },
-                    { id: "mo3", name: "Veg momos fry kurkure", price: 90 }, { id: "mo4", name: "Veg momos tandoori malai", price: 110 },
-                    { id: "mo5", name: "Paneer momos steam", price: 90 }, { id: "mo6", name: "Paneer momos fry", price: 100 },
-                    { id: "mo7", name: "Paneer momos fry kurkure", price: 100 }, { id: "mo8", name: "Paneer momos tandoori", price: 110 }
-                ]
-            },
-            {
-                category: "Pizza & Garlic Bread", colorClass: "bg-yellow-600",
-                items: [
-                    { id: "pz1", name: "Cheese Pizza", price: 90 }, { id: "pz2", name: "Cheese Corn Pizza", price: 100 },
-                    { id: "pz3", name: "Cheese Paneer Pizza", price: 110 }, { id: "pz4", name: "Butter Garlic Bread", price: 45 },
-                    { id: "pz5", name: "Cheese Garlic Bread", price: 60 }
-                ]
-            },
-            {
-                category: "Egg Special", colorClass: "bg-brand-DEFAULT",
-                items: [
-                    { id: "eg1", name: "Double Egg Omelette", price: 35 }, { id: "eg2", name: "Bread & Egg Half/full Fry", price: 40 },
-                    { id: "eg3", name: "Bread Omelette", price: 40 }, { id: "eg4", name: "Bread Cheese Omelette", price: 70 }
-                ]
-            },
-            {
-                category: "Toast & Chilla", colorClass: "bg-orange-600",
-                items: [
-                    { id: "tc1", name: "Aloo Toast", price: 60 }, { id: "tc2", name: "Paneer Toast", price: 70 },
-                    { id: "tc3", name: "Chilli Cheese Toast", price: 60 }, { id: "tc4", name: "Peanut Butter Toast", price: 80 },
-                    { id: "tc5", name: "Millet Chilla", price: 50 }, { id: "tc6", name: "Besan Chilla", price: 50 },
-                    { id: "tc7", name: "Paneer Besan Chilla", price: 60 }, { id: "tc8", name: "Paneer Cheese Chilla", price: 70 }
-                ]
-            },
-            {
-                category: "Paratha & South Indian", colorClass: "bg-red-800",
-                items: [
-                    { id: "ps1", name: "Lachha Paratha (with paneer bhurji)", price: 90 }, { id: "ps2", name: "Aloo Pyaj Paratha", price: 50 },
-                    { id: "ps3", name: "Paneer Paratha", price: 60 }, { id: "ps4", name: "Upma", price: 40 },
-                    { id: "ps5", name: "Uttapam", price: 60 }, { id: "ps6", name: "Idli Samber", price: 70 },
-                    { id: "ps7", name: "Fried Masala Idli", price: 80 }, { id: "ps8", name: "Masala Dosa", price: 75 }
-                ]
-            },
-            {
-                category: "Pasta", colorClass: "bg-brand-dark",
-                items: [
-                    { id: "pa1", name: "Mac & Cheese Pasta", price: 85 }, { id: "pa2", name: "White Sauce Pasta", price: 75 },
-                    { id: "pa3", name: "Mix Sauce Pasta", price: 80 }, { id: "pa4", name: "Red Sauce Pasta", price: 75 },
-                    { id: "pa5", name: "Pasta Salad", price: 80 }
-                ]
-            },
-            {
-                category: "Street Food", colorClass: "bg-yellow-500",
-                items: [
-                    { id: "sf1", name: "Samosa Chaat", price: 45 }, { id: "sf2", name: "Papdi Chaat", price: 45 },
-                    { id: "sf3", name: "Bhel Puri", price: 45 }, { id: "sf4", name: "Sev Purl", price: 45 },
-                    { id: "sf5", name: "Potato Chaat", price: 50 }, { id: "sf6", name: "Golgappe (8 Pcs)", price: 50 },
-                    { id: "sf7", name: "Aalu Bread Pakoda", price: 30 }, { id: "sf8", name: "Paneer Bread Pakoda", price: 50 },
-                    { id: "sf9", name: "Aalu Pyaaz Pakoda", price: 60 }, { id: "sf10", name: "Paneer Pakoda", price: 90 },
-                    { id: "sf11", name: "Dahi Vada", price: 50 }
-                ]
-            },
-            {
-                category: "Pav & Kulcha", colorClass: "bg-orange-500",
-                items: [
-                    { id: "pk1", name: "Pav Bhaji", price: 70 }, { id: "pk2", name: "Vada Pav", price: 60 },
-                    { id: "pk3", name: "Cheese Vada Pav", price: 70 }, { id: "pk4", name: "Cheese Pav Bhaji", price: 80 },
-                    { id: "pk5", name: "Paneer Kulcha", price: 60 }, { id: "pk6", name: "Chole Kulcha", price: 60 },
-                    { id: "pk7", name: "Aata Paneer Kulcha", price: 75 }, { id: "pk8", name: "Aata Chhole Kulchha", price: 70 }
-                ]
-            },
-            {
-                category: "Shakes", colorClass: "bg-purple-600",
-                items: [
-                    { id: "sh1", name: "Peanut Butter Shake", price: 60 }, { id: "sh2", name: "Cold Coffee", price: 50 },
-                    { id: "sh3", name: "Oreo Shake", price: 50 }, { id: "sh4", name: "Choco Oreo Shake", price: 50 },
-                    { id: "sh5", name: "Chocolate Shake", price: 50 }, { id: "sh6", name: "Butter Scotch Shake", price: 50 },
-                    { id: "sh7", name: "Strawberry Shake", price: 50 }, { id: "sh8", name: "Vanilla Shake", price: 50 },
-                    { id: "sh9", name: "Roohafza Shake", price: 50 }, { id: "sh10", name: "Paan Milk Shake", price: 50 },
-                    { id: "sh11", name: "Blueberry Milkshake", price: 55 }, { id: "sh12", name: "Peanut Butter With Banana", price: 70 },
-                    { id: "sh13", name: "Banana Shake", price: 50 }, { id: "sh14", name: "Apple Shake", price: 60 },
-                    { id: "sh15", name: "Mango Shake", price: 50 }
-                ]
-            },
-            {
-                category: "Refreshing Beverages", colorClass: "bg-blue-500",
-                items: [
-                    { id: "bv1", name: "Fresh Lemon Water", price: 30 }, { id: "bv2", name: "Lemon Jeera", price: 40 },
-                    { id: "bv3", name: "Lemon Soda", price: 40 }, { id: "bv4", name: "Lemon Ice Tea", price: 45 },
-                    { id: "bv5", name: "Soda Shikanji", price: 45 }, { id: "bv6", name: "Aam Panna", price: 45 },
-                    { id: "bv7", name: "Kala Khatta", price: 45 }, { id: "bv8", name: "Namkeen Lassi", price: 40 },
-                    { id: "bv9", name: "Sweet Lassi", price: 45 }, { id: "bv10", name: "Mango Lassi", price: 55 },
-                    { id: "bv11", name: "Roohafza Lassi", price: 50 }, { id: "bv12", name: "Mint Mojito", price: 50 },
-                    { id: "bv13", name: "Green Apple Mojito", price: 50 }, { id: "bv14", name: "Water Melon", price: 50 },
-                    { id: "bv15", name: "Blueberry Mojito", price: 50 }
-                ]
-            },
-            {
-                category: "Hot Specials", colorClass: "bg-red-900",
-                items: [
-                    { id: "ht1", name: "Tea", price: 10 }, { id: "ht2", name: "Masala Tea", price: 20 },
-                    { id: "ht3", name: "Coffee", price: 25 }, { id: "ht4", name: "Soup", price: 40 },
-                    { id: "ht5", name: "Hot Chocolate", price: 45 }, { id: "ht6", name: "Hot Bournvita", price: 45 }
-                ]
-            }
-        ];
-
+        // Global State Variables
+        let menuData = []; 
         let cart = {}; 
+        let userIp = "Unknown";
         const vendorPhone = "919643797932"; 
+        const googleAppScriptUrl = "https://script.google.com/macros/s/AKfycbxaLtUNZMDMAI-4YKROc01iW8n8OAw6FDr5jJEpBixD8pqZzCQWkzBSQFiwqNnLUS4/exec";
+
+        // 1. Fetch JSON data on page load
+        async function loadMenuData() {
+            try {
+                const response = await fetch('menu.json');
+                if (!response.ok) throw new Error("Network response was not ok");
+                menuData = await response.json();
+                renderStaticMenu();
+            } catch (error) {
+                console.error("Failed to load menu data:", error);
+                document.getElementById('static-menu-container').innerHTML = '<p class="text-center w-full col-span-full text-red-500 font-bold">Failed to load menu. Please refresh the page.</p>';
+            }
+        }
+
+        // Search Filter Logic
+        window.filterMenu = function() {
+            const query = document.getElementById('menu-search-input').value.toLowerCase();
+            const categories = document.querySelectorAll('.menu-category-block');
+            
+            categories.forEach(categoryBlock => {
+                let hasVisibleItems = false;
+                const items = categoryBlock.querySelectorAll('.menu-item-row');
+                
+                items.forEach(item => {
+                    const itemName = item.getAttribute('data-name').toLowerCase();
+                    if (itemName.includes(query)) {
+                        item.style.display = 'flex';
+                        hasVisibleItems = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                categoryBlock.style.display = hasVisibleItems ? 'block' : 'none';
+            });
+        };
 
         window.openOrderModal = function() {
+            // Fetch IP freshly only when the modal is opened
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => { userIp = data.ip; })
+                .catch(() => { userIp = "Unavailable"; });
+
             renderInteractiveMenu(); 
+            
+            // Reset search bar when opening
+            const searchInput = document.getElementById('menu-search-input');
+            if(searchInput) {
+                searchInput.value = "";
+                window.filterMenu();
+            }
+            
             updateLiveTotals(); 
             document.getElementById('interactive-order-modal').classList.remove('hidden');
             document.getElementById('interactive-order-modal').classList.add('flex');
@@ -356,19 +249,61 @@
             updateLiveTotals();
         };
 
-        window.sendWhatsAppOrder = function() {
-            let message = "*New Order - Accent On Health* 👨‍🍳\n\n";
+        window.sendWhatsAppOrder = async function() {
+            const submitBtn = document.getElementById('whatsapp-submit-btn');
+            const originalBtnContent = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-2xl"></i><span> Processing...</span>';
+            submitBtn.disabled = true;
+
+            let itemsText = "";
+            let messageItems = "";
             let totalPrice = 0;
 
             for (let id in cart) {
                 const item = getItemDetails(id);
                 if (item) {
                     const qty = cart[id];
-                    message += `▪️ ${qty}x ${item.name} (₹${item.price * qty})\n`;
+                    itemsText += `${qty}x ${item.name}, `;
+                    messageItems += `▪️ ${qty}x ${item.name} (₹${item.price * qty})\n`;
                     totalPrice += item.price * qty;
                 }
             }
 
+            const orderData = {
+                total: totalPrice,
+                items: itemsText,
+                ipAddress: userIp
+            };
+
+            let finalOrderId = "";
+
+            try {
+                // 5-Second Timeout Race
+                const timeoutPromise = new Promise((_, reject) => {
+                    setTimeout(() => reject(new Error('Request timed out')), 5000);
+                });
+
+                const fetchPromise = fetch(googleAppScriptUrl, {
+                    method: 'POST',
+                    body: JSON.stringify(orderData)
+                }).then(res => res.json());
+
+                const result = await Promise.race([fetchPromise, timeoutPromise]);
+                
+                if (result && result.orderId) {
+                    finalOrderId = result.orderId;
+                } else {
+                    throw new Error("Invalid response");
+                }
+            } catch (error) {
+                console.warn("Tracking failed or timed out. Using fallback ID.");
+                finalOrderId = "ORD-UNRECORDED";
+            }
+
+            // Construct final message
+            let message = `*New Order: ${finalOrderId}* 👨‍🍳\n\n`;
+            message += messageItems;
             message += `\n*Total Amount: ₹${totalPrice}*\n`;
             message += `\n_Please deliver to floor/desk: [Type here]_`;
 
@@ -376,7 +311,13 @@
             const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodedMessage}`;
             
             window.open(whatsappUrl, '_blank');
+            
+            // Reset UI and Clear Cart
+            submitBtn.innerHTML = originalBtnContent;
+            submitBtn.disabled = false;
             window.closeOrderModal();
+            cart = {};
+            updateLiveTotals();
         };
 
         function getItemDetails(id) {
@@ -412,14 +353,12 @@
             }
         }
 
-        // Render the main page menu in Masonry style columns
         function renderStaticMenu() {
             const container = document.getElementById('static-menu-container');
             if (!container) return;
 
             let html = '';
             menuData.forEach(cat => {
-                // break-inside-avoid ensures a category card doesn't split across columns
                 html += `
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 break-inside-avoid">
                         <div class="${cat.colorClass} text-white py-3 px-4 font-bold text-lg">${cat.category}</div>
@@ -445,7 +384,7 @@
             let html = '';
             menuData.forEach(cat => {
                 html += `
-                    <div class="mb-8">
+                    <div class="mb-8 menu-category-block">
                         <div class="flex items-center mb-4">
                             <div class="h-px bg-gray-200 flex-1"></div>
                             <h3 class="px-4 text-xl font-extrabold text-brand-dark">${cat.category}</h3>
@@ -456,7 +395,7 @@
                 cat.items.forEach(item => {
                     const qty = cart[item.id] || 0;
                     html += `
-                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center menu-item-row" data-name="${item.name.replace(/"/g, '&quot;')}">
                             <div class="pr-4">
                                 <h4 class="font-bold text-gray-800 leading-tight">${item.name}</h4>
                                 <p class="text-brand-accent font-semibold text-sm mt-1">₹${item.price}</p>
@@ -478,7 +417,8 @@
             container.innerHTML = html;
         }
 
-        renderStaticMenu();
+        // Initialize by loading the external JSON
+        document.addEventListener('DOMContentLoaded', loadMenuData);
     </script>
     
     <style>

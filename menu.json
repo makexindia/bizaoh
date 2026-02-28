@@ -1,0 +1,176 @@
+[
+    {
+        "category": "Salad", "colorClass": "bg-green-600",
+        "items": [
+            { "id": "sal1", "name": "Fruit yogurt", "price": 70 }, { "id": "sal2", "name": "Creamy salad", "price": 70 },
+            { "id": "sal3", "name": "Green salad", "price": 70 }, { "id": "sal4", "name": "Cucumber salad", "price": 80 },
+            { "id": "sal5", "name": "Tomato salad", "price": 70 }, { "id": "sal6", "name": "Veg salad", "price": 80 },
+            { "id": "sal7", "name": "Asian salad", "price": 90 }, { "id": "sal8", "name": "Broccoli salad", "price": 110 },
+            { "id": "sal9", "name": "Chickpea salad", "price": 90 }, { "id": "sal10", "name": "Grilled veg salad", "price": 110 },
+            { "id": "sal11", "name": "Lettuce salad", "price": 110 }, { "id": "sal12", "name": "Corn salad", "price": 60 },
+            { "id": "sal13", "name": "Sprouts salad", "price": 60 }
+        ]
+    },
+    {
+        "category": "Sandwich", "colorClass": "bg-brand-dark",
+        "items": [
+            { "id": "san1", "name": "Coleslaw Sandwich", "price": 70 }, { "id": "san2", "name": "Veg Cheese Sandwich", "price": 75 },
+            { "id": "san3", "name": "Veg Aloo Patty Sandwich", "price": 70 }, { "id": "san4", "name": "Veg Club Sandwich", "price": 70 },
+            { "id": "san5", "name": "Paneer Sandwich", "price": 80 }, { "id": "san6", "name": "Veg Aloo Patty Cheese Sandwich", "price": 80 },
+            { "id": "san7", "name": "Cheese Corn Sandwich", "price": 80 }, { "id": "san8", "name": "Tandoori Paneer Sandwich", "price": 80 },
+            { "id": "san9", "name": "Hunk Cut Sandwich", "price": 110 }, { "id": "san10", "name": "Avocado sandwich", "price": 160 },
+            { "id": "san11", "name": "Goakado Sandwich", "price": 110 }
+        ]
+    },
+    {
+        "category": "Roll", "colorClass": "bg-red-600",
+        "items": [
+            { "id": "r1", "name": "Aloo Tikki Roll", "price": 65 }, { "id": "r2", "name": "Aloo Tikki Cheese Roll", "price": 75 },
+            { "id": "r3", "name": "Egg Roll", "price": 65 }, { "id": "r4", "name": "Paneer Roll", "price": 80 },
+            { "id": "r5", "name": "Egg Paneer Roll", "price": 90 }
+        ]
+    },
+    {
+        "category": "Chinese", "colorClass": "bg-red-700",
+        "items": [
+            { "id": "chi1", "name": "Vegetable Chowmein", "price": 60 }, { "id": "chi2", "name": "Egg Chowmein", "price": 80 },
+            { "id": "chi3", "name": "Paneer Chowmein", "price": 80 }, { "id": "chi4", "name": "Veg Fried Rice", "price": 60 },
+            { "id": "chi5", "name": "Paneer Fried Rice", "price": 85 }, { "id": "chi6", "name": "Egg Fried Rice", "price": 85 },
+            { "id": "chi7", "name": "Chilli Potato", "price": 90 }, { "id": "chi8", "name": "Honey Chilli Potato", "price": 99 }
+        ]
+    },
+    {
+        "category": "Maggi", "colorClass": "bg-yellow-500",
+        "items": [
+            { "id": "m1", "name": "Plane Maggi", "price": 40 }, { "id": "m2", "name": "Vegetable Maggi", "price": 45 },
+            { "id": "m3", "name": "Atta Maggi", "price": 60 }, { "id": "m4", "name": "Cheese Maggi", "price": 60 },
+            { "id": "m5", "name": "Fried Maggi", "price": 70 }, { "id": "m6", "name": "Paneer Maggi", "price": 80 },
+            { "id": "m7", "name": "Egg Maggi", "price": 70 }
+        ]
+    },
+    {
+        "category": "Tasty Crispy", "colorClass": "bg-orange-500",
+        "items": [
+            { "id": "c1", "name": "Crispy French Fries", "price": 70 }, { "id": "c2", "name": "Peri Peri French Fries", "price": 90 },
+            { "id": "c3", "name": "Crispy Corn", "price": 90 }, { "id": "c4", "name": "Cheese Nachos", "price": 90 }
+        ]
+    },
+    {
+        "category": "Burger", "colorClass": "bg-amber-600",
+        "items": [
+            { "id": "bg1", "name": "Veg Aloo Patty Burger", "price": 50 }, { "id": "bg2", "name": "Egg Burger", "price": 55 },
+            { "id": "bg3", "name": "Veg Aloo Patty Cheese Burger", "price": 65 }, { "id": "bg4", "name": "Paneer Burger", "price": 75 }
+        ]
+    },
+    {
+        "category": "Multigrain Sub", "colorClass": "bg-green-700",
+        "items": [
+            { "id": "sub1", "name": "Veg Aloo Patty Sub", "price": 75 }, { "id": "sub2", "name": "Veg Aloo Patty Cheese Sub", "price": 85 },
+            { "id": "sub3", "name": "Paneer Sub", "price": 85 }, { "id": "sub4", "name": "Cheese Paneer Sub", "price": 95 }
+        ]
+    },
+    {
+        "category": "Momos", "colorClass": "bg-red-500",
+        "items": [
+            { "id": "mo1", "name": "Veg momos steam", "price": 80 }, { "id": "mo2", "name": "Veg momos fry", "price": 90 },
+            { "id": "mo3", "name": "Veg momos fry kurkure", "price": 90 }, { "id": "mo4", "name": "Veg momos tandoori malai", "price": 110 },
+            { "id": "mo5", "name": "Paneer momos steam", "price": 90 }, { "id": "mo6", "name": "Paneer momos fry", "price": 100 },
+            { "id": "mo7", "name": "Paneer momos fry kurkure", "price": 100 }, { "id": "mo8", "name": "Paneer momos tandoori", "price": 110 }
+        ]
+    },
+    {
+        "category": "Pizza & Garlic Bread", "colorClass": "bg-yellow-600",
+        "items": [
+            { "id": "pz1", "name": "Cheese Pizza", "price": 90 }, { "id": "pz2", "name": "Cheese Corn Pizza", "price": 100 },
+            { "id": "pz3", "name": "Cheese Paneer Pizza", "price": 110 }, { "id": "pz4", "name": "Butter Garlic Bread", "price": 45 },
+            { "id": "pz5", "name": "Cheese Garlic Bread", "price": 60 }
+        ]
+    },
+    {
+        "category": "Egg Special", "colorClass": "bg-brand-DEFAULT",
+        "items": [
+            { "id": "eg1", "name": "Double Egg Omelette", "price": 35 }, { "id": "eg2", "name": "Bread & Egg Half/full Fry", "price": 40 },
+            { "id": "eg3", "name": "Bread Omelette", "price": 40 }, { "id": "eg4", "name": "Bread Cheese Omelette", "price": 70 }
+        ]
+    },
+    {
+        "category": "Toast & Chilla", "colorClass": "bg-orange-600",
+        "items": [
+            { "id": "tc1", "name": "Aloo Toast", "price": 60 }, { "id": "tc2", "name": "Paneer Toast", "price": 70 },
+            { "id": "tc3", "name": "Chilli Cheese Toast", "price": 60 }, { "id": "tc4", "name": "Peanut Butter Toast", "price": 80 },
+            { "id": "tc5", "name": "Millet Chilla", "price": 50 }, { "id": "tc6", "name": "Besan Chilla", "price": 50 },
+            { "id": "tc7", "name": "Paneer Besan Chilla", "price": 60 }, { "id": "tc8", "name": "Paneer Cheese Chilla", "price": 70 }
+        ]
+    },
+    {
+        "category": "Paratha & South Indian", "colorClass": "bg-red-800",
+        "items": [
+            { "id": "ps1", "name": "Lachha Paratha (with paneer bhurji)", "price": 90 }, { "id": "ps2", "name": "Aloo Pyaj Paratha", "price": 50 },
+            { "id": "ps3", "name": "Paneer Paratha", "price": 60 }, { "id": "ps4", "name": "Upma", "price": 40 },
+            { "id": "ps5", "name": "Uttapam", "price": 60 }, { "id": "ps6", "name": "Idli Samber", "price": 70 },
+            { "id": "ps7", "name": "Fried Masala Idli", "price": 80 }, { "id": "ps8", "name": "Masala Dosa", "price": 75 }
+        ]
+    },
+    {
+        "category": "Pasta", "colorClass": "bg-brand-dark",
+        "items": [
+            { "id": "pa1", "name": "Mac & Cheese Pasta", "price": 85 }, { "id": "pa2", "name": "White Sauce Pasta", "price": 75 },
+            { "id": "pa3", "name": "Mix Sauce Pasta", "price": 80 }, { "id": "pa4", "name": "Red Sauce Pasta", "price": 75 },
+            { "id": "pa5", "name": "Pasta Salad", "price": 80 }
+        ]
+    },
+    {
+        "category": "Street Food", "colorClass": "bg-yellow-500",
+        "items": [
+            { "id": "sf1", "name": "Samosa Chaat", "price": 45 }, { "id": "sf2", "name": "Papdi Chaat", "price": 45 },
+            { "id": "sf3", "name": "Bhel Puri", "price": 45 }, { "id": "sf4", "name": "Sev Purl", "price": 45 },
+            { "id": "sf5", "name": "Potato Chaat", "price": 50 }, { "id": "sf6", "name": "Golgappe (8 Pcs)", "price": 50 },
+            { "id": "sf7", "name": "Aalu Bread Pakoda", "price": 30 }, { "id": "sf8", "name": "Paneer Bread Pakoda", "price": 50 },
+            { "id": "sf9", "name": "Aalu Pyaaz Pakoda", "price": 60 }, { "id": "sf10", "name": "Paneer Pakoda", "price": 90 },
+            { "id": "sf11", "name": "Dahi Vada", "price": 50 }
+        ]
+    },
+    {
+        "category": "Pav & Kulcha", "colorClass": "bg-orange-500",
+        "items": [
+            { "id": "pk1", "name": "Pav Bhaji", "price": 70 }, { "id": "pk2", "name": "Vada Pav", "price": 60 },
+            { "id": "pk3", "name": "Cheese Vada Pav", "price": 70 }, { "id": "pk4", "name": "Cheese Pav Bhaji", "price": 80 },
+            { "id": "pk5", "name": "Paneer Kulcha", "price": 60 }, { "id": "pk6", "name": "Chole Kulcha", "price": 60 },
+            { "id": "pk7", "name": "Aata Paneer Kulcha", "price": 75 }, { "id": "pk8", "name": "Aata Chhole Kulchha", "price": 70 }
+        ]
+    },
+    {
+        "category": "Shakes", "colorClass": "bg-purple-600",
+        "items": [
+            { "id": "sh1", "name": "Peanut Butter Shake", "price": 60 }, { "id": "sh2", "name": "Cold Coffee", "price": 50 },
+            { "id": "sh3", "name": "Oreo Shake", "price": 50 }, { "id": "sh4", "name": "Choco Oreo Shake", "price": 50 },
+            { "id": "sh5", "name": "Chocolate Shake", "price": 50 }, { "id": "sh6", "name": "Butter Scotch Shake", "price": 50 },
+            { "id": "sh7", "name": "Strawberry Shake", "price": 50 }, { "id": "sh8", "name": "Vanilla Shake", "price": 50 },
+            { "id": "sh9", "name": "Roohafza Shake", "price": 50 }, { "id": "sh10", "name": "Paan Milk Shake", "price": 50 },
+            { "id": "sh11", "name": "Blueberry Milkshake", "price": 55 }, { "id": "sh12", "name": "Peanut Butter With Banana", "price": 70 },
+            { "id": "sh13", "name": "Banana Shake", "price": 50 }, { "id": "sh14", "name": "Apple Shake", "price": 60 },
+            { "id": "sh15", "name": "Mango Shake", "price": 50 }
+        ]
+    },
+    {
+        "category": "Refreshing Beverages", "colorClass": "bg-blue-500",
+        "items": [
+            { "id": "bv1", "name": "Fresh Lemon Water", "price": 30 }, { "id": "bv2", "name": "Lemon Jeera", "price": 40 },
+            { "id": "bv3", "name": "Lemon Soda", "price": 40 }, { "id": "bv4", "name": "Lemon Ice Tea", "price": 45 },
+            { "id": "bv5", "name": "Soda Shikanji", "price": 45 }, { "id": "bv6", "name": "Aam Panna", "price": 45 },
+            { "id": "bv7", "name": "Kala Khatta", "price": 45 }, { "id": "bv8", "name": "Namkeen Lassi", "price": 40 },
+            { "id": "bv9", "name": "Sweet Lassi", "price": 45 }, { "id": "bv10", "name": "Mango Lassi", "price": 55 },
+            { "id": "bv11", "name": "Roohafza Lassi", "price": 50 }, { "id": "bv12", "name": "Mint Mojito", "price": 50 },
+            { "id": "bv13", "name": "Green Apple Mojito", "price": 50 }, { "id": "bv14", "name": "Water Melon", "price": 50 },
+            { "id": "bv15", "name": "Blueberry Mojito", "price": 50 }
+        ]
+    },
+    {
+        "category": "Hot Specials", "colorClass": "bg-red-900",
+        "items": [
+            { "id": "ht1", "name": "Tea", "price": 10 }, { "id": "ht2", "name": "Masala Tea", "price": 20 },
+            { "id": "ht3", "name": "Coffee", "price": 25 }, { "id": "ht4", "name": "Soup", "price": 40 },
+            { "id": "ht5", "name": "Hot Chocolate", "price": 45 }, { "id": "ht6", "name": "Hot Bournvita", "price": 45 }
+        ]
+    }
+]
