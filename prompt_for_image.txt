@@ -28,15 +28,15 @@ Icon 4 (Heart shake hands) SUPPORT LOCAL: "Your 2nd-floor cafeteria is run by a 
 
 Main Visual Section (Today's Menu & Data):
 
-Left Side: A stunning, professional, overhead "flat-lay" photograph of a full, stylized North Indian thali (metal platter). The thali includes separate small bowls of: creamy Dal Makhani, bright green Matar Paneer, dry Nutri Aloo, Plain Rice, two Chapatis, Kachumber Salad, Lauki Raita, and Gulab Jamun.
+Left Side: A stunning, professional, overhead "flat-lay" photograph of a full, stylized North Indian thali (metal platter). The thali includes separate small bowls of all items from the menu for the day specified (assume creative description for each item).
 
 Discreet text near food: "Image is indicative of quality and meal type."
 
 Right Side (Data & Digital Bridge): A sleek, translucent panel containing two elements:
 
-Item List: A clean list of items included in todays menu: Dal Makhani, Matar Paneer, Nutri Aloo, Rice + Chapati.
+Item List: A clean list of items included in todays menu: Derive a compact list of items from the menu for the day specified.
 
-QR Code Section: Directly below the nutrition table, a high-contrast black-and-white generated QR code that takes to URL "bizaoh.makex.in". Above the QR code, prominent bold text reading: "SCAN FOR DAILY MENU & SPECIALS". Below the QR code, print the URL text: "bizaoh.makex.in".
+QR Code Section: Directly below the nutrition table, a high-contrast black-and-white generated QR code that takes to URL "bizaoh.makex.in". Above the QR code, prominent bold text reading: "SCAN FOR DAILY MENU & SPECIALS". Below the QR code, print the URL text: "https://bizaoh.makex.in".
 
 Bottom Section (Footer & Consultation):
 

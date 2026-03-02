@@ -1,0 +1,30 @@
+function doPost(e) {
+  // 1. Get the active sheet
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  
+  // 2. Parse the incoming data from your website
+  const data = JSON.parse(e.postData.contents);
+  
+  // 3. Generate a timestamp
+  const timestamp = new Date();
+  
+  // 4. Determine the next Order ID (based on the last row)
+  const lastRow = sheet.getLastRow();
+  const orderId = "ORD-" + (lastRow); // e.g., ORD-1, ORD-2
+  
+  // 5. Append the new row to the sheet
+  sheet.appendRow([
+    timestamp,
+    orderId,
+    data.total,
+    data.items,
+    data.ipAddress,
+    "Pending"
+  ]);
+  
+  // 6. Return the Order ID back to your website
+  return ContentService.createTextOutput(JSON.stringify({ 
+    "status": "success", 
+    "orderId": orderId 
+  })).setMimeType(ContentService.MimeType.JSON);
+}
